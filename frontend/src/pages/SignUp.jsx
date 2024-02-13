@@ -23,7 +23,7 @@ const SignUp = () => {
   }
   async function addUserToUsersTable(formData) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND}/users`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

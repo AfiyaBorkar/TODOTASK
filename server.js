@@ -4,22 +4,21 @@ const cors = require('cors')
 const dotenv = require('dotenv');
 const path = require('path');
 
-dotenv.config();
 const app = express();
+dotenv.config();
+
 const port = process.env.PORT|| 5000; 
 app.use(express.static(path.resolve(__dirname, './frontend/dist')));
 
 
-
+app.use(express.json());
+app.use(cors());
 const supabaseUrl = 'https://hvqfeotifcbzumtmgbel.supabase.co'
 const supabaseKey = process.env.supabaseKey_APIKEY
 const supabase = createClient(supabaseUrl, supabaseKey)
-app.use(express.json());
-app.use(cors());
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './frontend/dist/index.html'));
-  });
+
+
 
 app.post('/users', async (req, res) => {
     try {
@@ -36,7 +35,9 @@ app.post('/users', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './frontend/dist/index.html'));
+  });
 // Start the server
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
