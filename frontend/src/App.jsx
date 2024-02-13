@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SignUp, Login, Homepage } from "./pages";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,Navigate } from "react-router-dom";
 import "./App.css";
 import AdminDashboard from "./pages/AdminDashboard";
 
@@ -52,11 +52,9 @@ const App = () => {
           ""
         )}
         {/* {admin ?  */}
-        {admin && admin.is_admin ? (
-          <Route path={"/admin"} element={<AdminDashboard />} />
-        ) : (
-          ""
-        )}
+        {admin && admin.is_admin ?(
+          <Route path={"/admin"} element= {<AdminDashboard />} />):("")}
+       
       </Routes>
     </div>
   );

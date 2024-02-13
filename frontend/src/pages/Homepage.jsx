@@ -31,7 +31,7 @@ const Homepage = ({ token }) => {
           .select("*")
           .eq("user_id", token.user.id);
         if (error) throw error;
-        console.log("Fetched todos:", todos);
+        // console.log("Fetched todos:", todos);
         setTodos(todos);
       } catch (error) {
         console.error("Error fetching todos:", error.message);
@@ -51,7 +51,7 @@ const Homepage = ({ token }) => {
         console.error("Error fetching todos:", error.message);
         throw error;
       }
-      console.log("Fetched todos:", todos); // Log fetched todos for debugging
+      // console.log("Fetched todos:", todos); // Log fetched todos for debugging
       setTodos(todos); // Update the todos state with the fetched todos
     } catch (error) {
       console.error("Error fetching todos:", error.message);
@@ -77,6 +77,9 @@ const Homepage = ({ token }) => {
       if (data) {
         fetchTodos(); // Fetch updated todos
       }
+// alert("Todo Added")
+      window.location.reload()
+
       setNewTodoTitle("");
       setNewTodoDescription("");
 
@@ -125,10 +128,17 @@ const Homepage = ({ token }) => {
 
       // Fetch the updated todos after the update operation
       fetchTodos();
+      // alert("updated your todo")
+      window.location.reload()
+      setRefresh(false)
+
     } catch (error) {
       console.error("Error updating todo:", error.message);
     }
   }
+
+ 
+  
 
   return (
     <div className="todo">
@@ -215,7 +225,7 @@ const Homepage = ({ token }) => {
                   {editingTodoId === todo.id ? (
                     <>
                       <div className="iconss">
-                        <IconButton onClick={updateTodo}>
+                        <IconButton onClick={()=>{updateTodo(),setRefresh(true)}}>
                           <SaveIcon sx={{ fontSize: 20 }} />
                         </IconButton>
 

@@ -11,7 +11,7 @@ const SignUp = () => {
     password: "",
   });
 
-  console.log(formData);
+  // console.log(formData);
 
   function handleChange(event) {
     setFormData((prevFormData) => {
@@ -36,7 +36,7 @@ const SignUp = () => {
       }
 
       const data = await response.json();
-      console.log("Added user to users table:", data);
+      // console.log("Added user to users table:", data);
     } catch (error) {
       console.error("Error adding user to users table:", error.message);
       throw error;

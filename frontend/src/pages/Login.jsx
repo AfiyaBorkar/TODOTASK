@@ -14,7 +14,7 @@ const Login = ({setToken}) => {
 
   const [userdata, setuserdata] = useState({})
 
-  console.log(formData)
+  // console.log(formData)
 
   function handleChange(event){
     setFormData((prevFormData)=>{
@@ -37,7 +37,7 @@ const Login = ({setToken}) => {
           })
 
       if (error) throw error
-      console.log("user data",data.user.email)
+      // console.log("user data",data.user.email)
       setToken(data)
 
 
@@ -50,12 +50,14 @@ const Login = ({setToken}) => {
           .single();
 
         if (userError) throw userError;
-        console.log("user data from usets",userData)
+        // console.log("user data from usets",userData)
         setuserdata(userData)
+        localStorage.setItem('admininfo',JSON.stringify( userData));
 
         if (userData && userData.is_admin) {
-          navigate('/admin');
-          localStorage.setItem('admininfo',JSON.stringify( userData))
+
+          // navigate('/admin');
+          window.location.href="/admin"
         } else {
           setToken(data);
           navigate('/homepage');

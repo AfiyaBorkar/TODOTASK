@@ -18,6 +18,10 @@ const AdminDashboard = () => {
   // const [date, setDate] = useState(new Date());
   const [adminsCount, setAdminsCount] = useState(0);
   const navigate = useNavigate();
+  let admin = JSON.parse(localStorage.getItem("admininfo"));
+  // useEffect(() => {
+  //   window.location.reload();
+  // }, []);
 
   useEffect(() => {
     fetchTodosCount();
@@ -84,94 +88,98 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="admin-container">
-      <div className="adminheader">
-        <div className="head">
-          <h2>Admin Dashboard</h2>
+    <>
+      <div className="admin-container">
+        <div className="adminheader">
+          <div className="head">
+            <h2>Admin Dashboard</h2>
+          </div>
+          <hr></hr>
+          <div className="options">
+            <div className="overviewtab sidetab">
+              <h4>Overview</h4>
+            </div>
+            <div className="analyticstab sidetab">
+              <h4>Analytics</h4>
+            </div>
+          </div>
         </div>
-        <hr></hr>
-        <div className="options">
-          <div className="overviewtab sidetab">
-            <h4>Overview</h4>
+
+        <div className="dashboarddetials" style={{ margin: "auto" }}>
+          <div className="admintitle">
+            <div className="heading">
+              <h2>Welcome,Admin</h2>
+            </div>
+
+            <div className="admin-account">
+              <IconButton onClick={handleLogout}>
+                <LogoutIcon sx={{ fontSize: 40 }}></LogoutIcon>
+              </IconButton>
+            </div>
           </div>
-          <div className="analyticstab sidetab">
-            <h4>Analytics</h4>
+          <div className="overview">
+            <div className="details">
+              <div className="userdetails container-box">
+                <div className="usericon">
+                  <IconButton>
+                    <AccountCircleIcon
+                      sx={{ fontSize: 50 }}
+                    ></AccountCircleIcon>
+                  </IconButton>
+                </div>
+                <div className="users">
+                  <h3>Total Users</h3>
+                  <h5>{usersCount}</h5>
+                </div>
+              </div>
+              <div className="tododetails container-box">
+                <div className="usericon">
+                  <IconButton>
+                    <TextSnippetIcon sx={{ fontSize: 50 }}></TextSnippetIcon>
+                  </IconButton>
+                </div>
+                <div className="users">
+                  <h3>Total Todos</h3>
+                  <h5>{todosCount}</h5>
+                </div>
+              </div>
+
+              <div className="admindetails container-box">
+                <div className="usericon">
+                  <IconButton>
+                    {/* <TextSnippetIcon sx={{ fontSize: 50 }}></TextSnippetIcon> */}
+                    <AdminPanelSettingsIcon
+                      sx={{ fontSize: 50 }}
+                    ></AdminPanelSettingsIcon>
+                  </IconButton>
+                </div>
+                <div className="users">
+                  <h3>Total Admins</h3>
+                  <h5>{adminsCount}</h5>
+                </div>
+              </div>
+            </div>
+
+            <div className="barchart" style={{ width: "50%" }}>
+              {/* <Bar data={barChartData} /> */}
+              <TodoChart></TodoChart>
+            </div>
+
+            <div className="chartss">
+              <div className="linechart">
+                {/* <UserChart/> */}
+                <UserAdminTodoRatio />
+              </div>
+              <div className="calendar-container">
+                <UserChart />
+                {/* <Calendar onChange={setDate} value={date} /> */}
+              </div>
+            </div>
           </div>
+          {/* {todosCount} */}
         </div>
       </div>
-
-      <div className="dashboarddetials" style={{ margin: "auto" }}>
-        <div className="admintitle">
-          <div className="heading">
-            <h2>Welcome,Admin</h2>
-          </div>
-
-          <div className="admin-account">
-            <IconButton onClick={handleLogout}>
-              <LogoutIcon sx={{ fontSize: 40 }}></LogoutIcon>
-            </IconButton>
-          </div>
-        </div>
-        <div className="overview">
-          <div className="details">
-            <div className="userdetails container-box">
-              <div className="usericon">
-                <IconButton>
-                  <AccountCircleIcon sx={{ fontSize: 50 }}></AccountCircleIcon>
-                </IconButton>
-              </div>
-              <div className="users">
-                <h3>Total Users</h3>
-                <h5>{usersCount}</h5>
-              </div>
-            </div>
-            <div className="tododetails container-box">
-              <div className="usericon">
-                <IconButton>
-                  <TextSnippetIcon sx={{ fontSize: 50 }}></TextSnippetIcon>
-                </IconButton>
-              </div>
-              <div className="users">
-                <h3>Total Todos</h3>
-                <h5>{todosCount}</h5>
-              </div>
-            </div>
-
-            <div className="admindetails container-box">
-              <div className="usericon">
-                <IconButton>
-                  {/* <TextSnippetIcon sx={{ fontSize: 50 }}></TextSnippetIcon> */}
-                  <AdminPanelSettingsIcon
-                    sx={{ fontSize: 50 }}
-                  ></AdminPanelSettingsIcon>
-                </IconButton>
-              </div>
-              <div className="users">
-                <h3>Total Admins</h3>
-                <h5>{adminsCount}</h5>
-              </div>
-            </div>
-          </div>
-
-          <div className="barchart" style={{ width: "50%" }}>
-            {/* <Bar data={barChartData} /> */}
-            <TodoChart></TodoChart>
-          </div>
-
-          <div className="chartss">
-            <div className="linechart">
-              {/* <UserChart/> */}
-              <UserAdminTodoRatio />
-            </div>
-            <div className="calendar-container">
-              <UserChart />
-              {/* <Calendar onChange={setDate} value={date} /> */}
-            </div>
-          </div>
-        </div>
-        {/* {todosCount} */}
-      </div>
-    </div>
+    </>
   );
 };
 
