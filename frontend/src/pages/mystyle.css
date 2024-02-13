@@ -1,0 +1,377 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  margin: 10px;
+  gap:15px
+
+}
+
+input {
+  padding: 8px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  /* width: 100%; */
+}
+
+button {
+  width: 50%;
+}
+
+.container {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  margin: 10px;
+  height: 70vh;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.todo {
+  display: flex;
+  border-radius: 20px;
+  display: flex;
+  align-items: normal;
+  gap: 10px;
+  /* justify-content: center; */
+  padding: 50px;
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.divheader {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.nametitle {
+  align-self: flex-start;
+  flex: 0.8;
+}
+
+.todoconatiner {
+  align-items: flex-start;
+  gap: 10px;
+  /* text-align: left; */
+}
+
+.inputcont {
+  align-items: flex-start;
+}
+
+.todoconatiner input {
+  width: 200px;
+}
+
+.todoconatiner button {
+  width: 50% !important;
+}
+
+.displayTodo {
+  align-items: normal;
+  gap: 10px;
+  text-align: center;
+}
+table {
+  padding: 10px;
+}
+
+.btns {
+  margin: 10px;
+}
+
+.iconss {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.iconss button {
+  width: 50% !important;
+}
+.displayTodo input {
+  /* padding: 8px; */
+  outline: none;
+  width: 100px;
+  padding: 2px;
+}
+
+.displayTodo button {
+  width: 100%;
+}
+
+.admin-container {
+  border-radius: 20px;
+  display: flex;
+  /* align-items: center;
+    justify-content: center; */
+  flex-direction: row;
+  padding: 25px;
+
+  margin: 10px;
+  height: 90vh;
+  width: 90vw;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  overflow-y: scroll;
+}
+
+.adminheader {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  height: 80vh;
+  gap: 10px;
+  padding: 10px;
+}
+
+.head {
+  flex: 0.2;
+}
+
+.options {
+  flex: 1;
+  justify-content: flex-start;
+  gap: 30px;
+  align-self: flex-start;
+  width: 100%;
+}
+.sidetab {
+  /* text-align: center; */
+  width: 100%;
+  padding: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.sidetab:hover {
+  background-color: rgb(212, 210, 210);
+}
+
+.dashboarddetials {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* margin-top: 25px !important; */
+  /* height: 100%; */
+  width: 100% !important;
+  /* border: 1px dotted; */
+  /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+  /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* background-color: #E2E8E2; */
+  border-radius: 15px;
+}
+
+.overview {
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* height: 80vh; */
+  width: 100%;
+  /* overflow-y: scroll; */
+}
+
+.admintitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 10px;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.container-box {
+  height: 100px;
+  width: 200px;
+  /* border: 1px solid; */
+  border-radius: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.barchart {
+  display: flex;
+  /* width: 95%; */
+  /* border: 1px solid; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  border-radius: 15px;
+
+  height: 30%;
+  margin: 15px;
+}
+
+.chartss {
+  display: flex;
+  width: 95%;
+  margin: 10px;
+  /* align-items: flex-start; */
+  /* justify-content: space-between; */
+  flex-direction: column;
+}
+
+.linechart {
+  /* border: 1px solid; */
+  border-radius: 15px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  width: 80%;
+  height: 194px;
+  margin: 10px;
+}
+
+.calendar {
+  /* border: 1px solid; */
+
+  border-radius: 15px;
+  width: 40%;
+  height: 194px;
+  margin: 10px;
+}
+.userdetails {
+  align-items: baseline;
+}
+
+.calendar-container {
+  display: flex;
+  align-self: normal;
+  justify-self: flex-start;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 20px;
+  border: 3px solid var(--scroll-bar-bg-color);
+}
+
+@media only screen and (min-width: 1200px) {
+  .container-box {
+    width: 400px;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: flex-start;
+  }
+
+  .usericon {
+    flex: 0.4;
+    margin: 2px;
+    padding: 5px;
+  }
+  .users {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .barchart {
+    height: 32vh !important;
+
+    width: 80%;
+    align-self: center;
+  }
+
+  .linechart {
+    width: 60%;
+    height: 200px;
+  }
+
+  .calendar {
+    width: 30%;
+    height: 200px;
+    /* justify-content: space-around !important; */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .adminheader {
+    display: none;
+  }
+
+  .container-box {
+    height: 100px;
+    width: 93px;
+    font-size: 10px;
+    align-items: center;
+  }
+
+  .dashboarddetials {
+    box-shadow: none;
+  }
+
+  .admin-container {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .barchart {
+    height: 250px;
+
+    align-self: center;
+    width: 90% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container-box {
+    height: 100px;
+    width: 300px;
+    font-size: 10px;
+    align-items: center;
+  }
+
+  .barchart {
+    height: 250px;
+
+    align-self: center;
+    width: 90% !important;
+  }
+}
